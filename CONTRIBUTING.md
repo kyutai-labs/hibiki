@@ -1,8 +1,8 @@
-# Contributing to Moshi
+# Contributing to Hibiki
 
 ## Pull Requests
 
-Moshi is the implementation of a research paper.
+MHibiki is the implementation of a research paper.
 Therefore, we do not plan on accepting many pull requests for new features.
 However, we certainly welcome them for bug fixes.
 
@@ -52,6 +52,6 @@ Please submit issues on our Github repository.
 
 ## License
 
-By contributing to Moshi, you agree that your contributions will be licensed
+By contributing to Hibiki, you agree that your contributions will be licensed
 under the LICENSE-* files in the root directory of this source tree.
 In particular, the rust code is licensed under APACHE, and the python code under MIT.
