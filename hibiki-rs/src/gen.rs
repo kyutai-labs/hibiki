@@ -63,10 +63,14 @@ pub fn run(args: &Args, dev: &Device) -> Result<()> {
     };
     tracing::info!(in_pcm_len, "loaded the audio input");
 
-    tracing::info!("loading the audio tokenizer");
-    let mut mimi = moshi::mimi::load(args.mimi_model_file.to_str().unwrap(), Some(8), dev)?;
     tracing::info!("loading the lm");
     let lm_model = moshi::lm::load_lm_model(lm_config.clone(), &args.lm_model_file, dtype, dev)?;
+    tracing::info!("loading the audio tokenizer");
+    let mut mimi = moshi::mimi::load(
+        args.mimi_model_file.to_str().unwrap(),
+        Some(lm_model.generated_audio_codebooks()),
+        dev,
+    )?;
     tracing::info!("loading the text tokenizer");
     let text_tokenizer = sentencepiece::SentencePieceProcessor::open(&args.text_tokenizer)?;
     tracing::info!("done loading models");

@@ -96,6 +96,11 @@ fn main() -> Result<()> {
             let dev = device(cpu)?;
             tracing_subscriber::fmt::init();
             let api = hf_hub::api::sync::Api::new()?;
+            let hf_repo = match hf_repo.as_str() {
+                "1b" => "kyutai/hibiki-1b-rs-bf16".to_string(),
+                "2b" => "kyutai/hibiki-2b-rs-bf16".to_string(),
+                _ => hf_repo,
+            };
             let repo = api.model(hf_repo);
             let config = match config {
                 None => repo.get("config.toml")?,
