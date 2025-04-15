@@ -130,7 +130,7 @@ cargo run  --features metal -r -- gen sample_fr_hibiki_crepes.mp3 out_en.wav
 
 We release two models for `FR -> EN` translation:
 - Hibiki 2B (for the backbone, a bit more with the depth transformer), 16 RVQ per stream.
-- Hibiki 1B (for the backbone, a bit more with the depth transformer), 8 RVQ per stream, ideal for on device inferencde.
+- Hibiki 1B (for the backbone, a bit more with the depth transformer), 8 RVQ per stream, ideal for on-device inference.
 
 Depending on the backend, the file format will vary.  Quantized models coming up soon. Current list of models:
 - Hibiki 2B for PyTorch (bf16): [kyutai/hibiki-2b-pytorch-bf16](https://huggingface.co/kyutai/hibiki-2b-pytorch-bf16)
