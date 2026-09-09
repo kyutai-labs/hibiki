@@ -24,3 +24,6 @@ dev = [
     "flake8",
     "pre-commit",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
